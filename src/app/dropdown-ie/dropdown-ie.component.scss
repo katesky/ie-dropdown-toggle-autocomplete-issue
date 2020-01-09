@@ -1,0 +1,38 @@
+.autocomplete {
+    width: 600px;
+}
+
+.jobs-dropdown-item {
+  height: 36px;
+}
+
+.sample-wrapper {
+  margin: 20px;
+}
+
+.jobs-item {
+  height: 36px;
+  &:nth-child(even):not(:hover):not(.igx-drop-down__item--selected):not(.igx-drop-down__item--focused) {
+    background-color: #d3d3d3;
+    color: #000;
+  }
+  &:focus {
+    .col-icon {
+      color: #a7a7a7;
+    }
+    .col-icon-edit {
+      color:  #a7a7a7;
+    }
+    .col-icon-delete {
+      color:  #a7a7a7;
+    }
+    padding: 0;
+  }
+
+  .col-jobs {
+    width: 427px;
+    margin-left: 0px;
+    padding-right: 0px;
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,25 @@
+<div class="sample-wrapper">
+    <section class="sample-content">
+        <article class="sample-column">
+            <form class="input-group-form">
+                <igx-input-group class="autocomplete" [igxToggleAction]="townsPanel">
+                    <label igxLabel for="town">Town</label>
+                    <input placeholder="Type to search" igxInput name="town" type="text" [igxAutocomplete]="townsPanel" [(ngModel)]="townSelected" />
+                    <igx-prefix class="search">
+                        <igx-icon class="icon-search">search</igx-icon>
+                    </igx-prefix>
+                    <igx-suffix igxButton="icon">
+                        <igx-icon class="icon-red">arrow_drop{{ townsPanel.collapsed ? '_down' : '_up' }}</igx-icon>
+                    </igx-suffix>
+                </igx-input-group>
+
+                <igx-drop-down (onOpened)="handleOpened($event)" (onOpening)="handleOpening($event)"  (onClosing)="handleClosing($event)" #townsPanel [width]="'260px'" maxHeight="300px">
+                    <igx-drop-down-item class="jobs-item jobs-dropdown-item"
+                        *ngFor="let town of towns | startsWith:townSelected" [value]="town">
+                        {{town}}
+                    </igx-drop-down-item>
+                </igx-drop-down>
+            </form>
+        </article>
+    </section>
+</div>
